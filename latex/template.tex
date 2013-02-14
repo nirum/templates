@@ -1,0 +1,104 @@
+% Niru Maheswaranathan - LaTeX template (nirum@stanford.edu)
+% modified from a template by Zachary T Harmony (zth@duke.edu)
+% last updated: Oct 2 2012
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[paper = letterpaper,
+            left = 1in, right= 1in,
+            top = 1in, bottom= 1in,
+            centering]{geometry}
+
+\usepackage[T1]{fontenc}
+%\usepackage{fouriernc}
+\usepackage{lmodern}
+% Use LaTeX modern fonts, little nicer than the default computer modern.
+\usepackage{textcomp}
+% Textcomp takes some characters from the T1 encoding.
+\usepackage{microtype}
+% Gives punctuation at the end of the lines a smoother appearance by character protrusion.
+\usepackage{amsmath}
+\usepackage{amssymb}
+ % Used to attach files (MATLAB scripts)
+\usepackage{listings}
+\usepackage{moreverb}
+
+% column vectors
+\newcommand*\colvec[1]{\begin{pmatrix}#1\end{pmatrix}}
+
+% highlighter!
+%\usepackage{empheq}
+\usepackage[leqno,fleqn,intlimits]{empheq}
+\usepackage{color}
+
+% stores last page number
+\usepackage{lastpage}
+
+% Allows inclusion of bitmap graphics (jpg, png)
+\usepackage{graphicx}
+%\graphicspath{{../figures/}}
+
+\usepackage{hyperref}
+\setcounter{tocdepth}{1}
+
+% fancy headers
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+
+%\fancyhf{}
+\lhead{LEFT HEADER}
+\rhead{RIGHT HEADER}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+% highlighting box
+\definecolor{boxcolor}{rgb}{0.8, 0.9, 1}
+\newcommand*\mybox[1]{\colorbox{boxcolor}{\hspace{1em}#1\hspace{1em}}}
+
+% Horizontal line
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+% -- Figure, Float, Table, and List Formatting
+\usepackage{array} % tables
+\usepackage{float} % place tables in exact positions
+% Redefine some parameters of floats
+\usepackage{booktabs} % improves the look of tables
+
+% Double Space report
+\usepackage{setspace}
+\onehalfspacing
+
+% Title Page
+\begin{document}
+
+\begin{center}
+  \textbf{TITLE\\
+  Niru Maheswaranathan\\
+  \today}\\
+\thispagestyle{empty}
+
+\end{center}
+
+% Report
+\subsubsection*{Examples}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.6\textwidth]{myfigure.eps}
+    \caption{My Caption}
+    \label{fig:myfigure}
+\end{figure}
+
+\begin{empheq}[box=\mybox]{align}
+    y = \int f(x) \partial x
+\end{empheq}
+
+\singlespacing
+\appendix
+\subsection*{Appendix}
+\small
+\section{\normalsize Matlab code, part 2(a) (linearly separable data)}
+\label{appendix:mycode}
+%\listinginput[5]{1}{myfile.m}
+
+\end{document}
